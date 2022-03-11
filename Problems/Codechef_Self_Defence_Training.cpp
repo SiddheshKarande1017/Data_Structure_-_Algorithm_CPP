@@ -59,22 +59,30 @@ template<typename T> T gcd(T a, T b){return(b?__gcd(a,b):a);}
 template<typename T> T lcm(T a, T b){return(a*(b/gcd(a,b)));} 
 
 int main(){
-	int tst;
-	cin>>tst;
-	while(tst--){
-		int n;
-		cin>>n;
-		vector<int> vec;
-		for(int i=0;i<n;i++){
-			int x;
-			cin>>x;
-			vec.push_back(x);
-		}
-		int ans=0;
-		for(int i=0;i<n;i++){
-			if(vec[i]>=10 && vec[i]<=60)
-				ans++;
-		}
-		cout<<ans<<endl;
+	string str;
+	cin>>str;
+	int l,r;
+	cin>>l>>r;
+	vector<int> vec{27,0};
+	for(int i=l;i<=r;i++){
+		vec[str[i]-'a']++;
 	}
+	bool even=true;int k;
+	if((r-l)%2) {even=false; k=1; }
+	bool ans=true;
+	for(int i=0;i<27;i++){
+		if(vec[i]%2 && ((l-r)%2))
+			k--;
+		if(vec[i]%2 && ((l-r)%2)==0 ){
+			ans=false;
+			break;
+		}
+		if(k<0){
+			ans=false;
+			break;
+		}
+	}
+	if(ans) cout<<"YES"<<endl;
+	else cout<<"NO"<<endl;
+
 }
