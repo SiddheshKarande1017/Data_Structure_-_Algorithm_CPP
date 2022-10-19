@@ -26,7 +26,7 @@ class Solution
                 p1.pop();
             }
            	// map<int, string>::reverse_iterator it;
-            cout << mp1.begin()->second.size();
+            //cout << mp1.begin()->second.size();
             for (auto it = mp1.rbegin(); it != mp1.rend(); it++)
             {
                 sort(it->second.begin(), it->second.end());
