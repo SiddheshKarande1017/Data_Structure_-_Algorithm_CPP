@@ -29,24 +29,6 @@ public:
             j++;
             
         }
-        j--;
-         for(auto &ik:mp)
-        {
-                if(ik.second>mp2[ik.first])
-                {
-                    f=true;
-                }
-           }
-         if(!f)
-            { //cout<<"ok"<<endl;
-                if((j-i+1)<=(e-st+1)|| st==-1)
-                st=i;e=j;
-                mp2[s[i]]--;
-                i++;
-                while(i<s.size() && mp.find(s[i])==mp.end()){mp2[s[i]]--;i++;} 
-                
-            }
-        //cout<<st<<" "<<e;
         if(st==-1) return "";
         string ans=s.substr(st,(e-st+1));
         return ans;
