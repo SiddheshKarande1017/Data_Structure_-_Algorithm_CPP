@@ -12,7 +12,7 @@ public:
         {
             pq.push_back({growTime[i],plantTime[i]});
         }
-        sort(pq.begin(),pq.end(),sortbysec);
+        sort(pq.begin(),pq.end(),greater<pair<int,int>>());
         int pday=0,maxi=0;
         for(auto it:pq)
         {
