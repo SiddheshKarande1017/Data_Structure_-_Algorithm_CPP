@@ -12,11 +12,6 @@ public:
 	int ans(vector<int>&arr, int prev,vector<int> &dp, int i, int n)
 	{
 	    if(i>=arr.size()) return 0;
-	   // if(dp[prev].size()==0)
-	   // {
-	   //     vector<int> vec(n+100,-1);
-	   //     dp[prev]=vec;
-	   // }
 	    if(dp[i]!=-1) return dp[i];
 	    int nt=ans(arr,prev,dp,i+1,n);
 	    int take=0;
@@ -28,7 +23,7 @@ public:
 	    
 	}
 	int findMaxSum(int *arr, int n) {
-	    // code here
+	    
 	    vector<int> a;
 	    for(int i=0;i<n;i++)
 	    {
