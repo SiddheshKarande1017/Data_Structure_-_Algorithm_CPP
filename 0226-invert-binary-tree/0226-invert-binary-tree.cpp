@@ -14,9 +14,9 @@ public:
     void invert(TreeNode *r)
     {
         if(!r) return ;
+        swap(r->left,r->right);
         invert(r->left);
         invert(r->right);
-        swap(r->left,r->right);
 
     }
     TreeNode* invertTree(TreeNode* root) {
