@@ -22,9 +22,16 @@ class Solution
                 {
                     a1++;
                 }
-                else a2++;
+                else
+                {
+                    a2++;
+                    
+                }
                 if(a1==a2)
-                 ans++;
+                {
+                    ans++;
+                    
+                }
                 
             }
         }
