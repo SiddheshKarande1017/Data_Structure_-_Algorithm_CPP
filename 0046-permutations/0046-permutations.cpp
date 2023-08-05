@@ -1,25 +1,30 @@
 class Solution {
 public:
     set<vector<int>> ans;
-    void rec(vector<int> nums, int i)
+    void ans1(vector<int> nums, int i)
     {
-        if(i>=nums.size()) {return;}
-        ans.insert(nums);
-        for(int j=0;j<nums.size();j++)
+        if(i>=nums.size())
         {
-            swap(nums[i],nums[j]);
-            rec(nums,i+1);
-            swap(nums[i],nums[j]);
+            ans.insert(nums);
+            return;
         }
         
-    }
-    vector<vector<int>> permute(vector<int>& nums) {
-        rec(nums,0);
-        vector<vector<int>> a;
-        for(auto ik:ans)
+        for(int j=i;j<nums.size(); j++)
         {
-            a.push_back(ik);
+            swap(nums[i],nums[j]);
+            ans1(nums, i+1);
+            swap(nums[i],nums[j]);
         }
-        return a;
+    }
+
+    
+    vector<vector<int>> permute(vector<int>& nums) {
+        vector<vector<int>> a1;
+        ans1(nums, 0);
+        for(auto it:ans)
+        {
+            a1.push_back(it);
+        }
+        return a1;
     }
 };
